@@ -18,7 +18,7 @@
         "harga_tiket": 150000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus1.jpg"
+      "url_gambar": "/img/bus1.jpg"
     },
     {
       "id_layanan": 2,
@@ -39,7 +39,7 @@
         "harga_tiket": 250000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus2.jpg"
+      "url_gambar": "/img/bus2.jpg"
     },
     {
       "id_layanan": 3,
@@ -60,7 +60,7 @@
         "harga_tiket": 120000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus3.jpg"
+      "url_gambar": "/img/bus3.jpg"
     },
     {
       "id_layanan": 4,
@@ -81,7 +81,7 @@
         "harga_tiket": 80000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus4.jpg"
+      "url_gambar": "/img/bus4.jpg"
     },
     {
       "id_layanan": 5,
@@ -102,7 +102,7 @@
         "harga_tiket": 300000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus5.jpg"
+      "url_gambar": "/img/bus5.jpg"
     },
     {
       "id_layanan": 6,
@@ -123,7 +123,7 @@
         "harga_tiket": 180000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus6.jpg"
+      "url_gambar": "/img/bus6.jpg"
     },
     {
       "id_layanan": 7,
@@ -144,7 +144,7 @@
         "harga_tiket": 150000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus7.jpg"
+      "url_gambar": "/img/bus7.jpg"
     },
     {
       "id_layanan": 8,
@@ -165,7 +165,7 @@
         "harga_tiket": 60000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus8.jpg"
+      "url_gambar": "/img/bus8.jpg"
     },
     {
       "id_layanan": 9,
@@ -186,7 +186,7 @@
         "harga_tiket": 350000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus9.jpg"
+      "url_gambar": "/img/bus9.jpg"
     },
     {
       "id_layanan": 10,
@@ -207,7 +207,7 @@
         "harga_tiket": 280000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus10.jpg"
+      "url_gambar": "/img/bus10.jpg"
     },
     {
       "id_layanan": 11,
@@ -228,7 +228,7 @@
         "harga_tiket": 90000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus11.jpg"
+      "url_gambar": "/img/bus11.jpg"
     },
     {
       "id_layanan": 12,
@@ -249,7 +249,7 @@
         "harga_tiket": 120000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus12.jpg"
+      "url_gambar": "/img/bus12.jpg"
     },
     {
       "id_layanan": 13,
@@ -270,7 +270,7 @@
         "harga_tiket": 400000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus13.jpg"
+      "url_gambar": "/img/bus13.jpg"
     },
     {
       "id_layanan": 14,
@@ -291,7 +291,7 @@
         "harga_tiket": 320000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus14.jpg"
+      "url_gambar": "/img/bus14.jpg"
     },
     {
       "id_layanan": 15,
@@ -312,7 +312,7 @@
         "harga_tiket": 180000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus15.jpg"
+      "url_gambar": "/img/bus15.jpg"
     },
     {
       "id_layanan": 16,
@@ -333,7 +333,7 @@
         "harga_tiket": 50000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus16.jpg"
+      "url_gambar": "/img/bus16.jpg"
     },
     {
       "id_layanan": 17,
@@ -354,7 +354,7 @@
         "harga_tiket": 280000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus17.jpg"
+      "url_gambar": "/img/bus17.jpg"
     },
     {
       "id_layanan": 18,
@@ -375,7 +375,7 @@
         "harga_tiket": 220000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus18.jpg"
+      "url_gambar": "/img/bus18.jpg"
     },
     {
       "id_layanan": 19,
@@ -396,7 +396,7 @@
         "harga_tiket": 200000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus19.jpg"
+      "url_gambar": "/img/bus19.jpg"
     },
     {
       "id_layanan": 20,
@@ -417,7 +417,7 @@
         "harga_tiket": 70000,
         "mata_uang": "IDR"
       },
-      "url_gambar": "./img/bus20.jpg"
+      "url_gambar": "/img/bus20.jpg"
     }
   ]
   

@@ -6,6 +6,7 @@ import React, { Suspense } from 'react'
 import './assets/tailwind.css'
 import { Route, Routes } from "react-router-dom";
 import Profile from './pages/Profile';
+// import DetailBus from './pages/DetailBus';
 // import Artikel from './pages/Artikel';
 // import Tim from './pages/Tim';
 // import FAQ from './pages/FAQ';
@@ -40,6 +41,7 @@ const Loading = React.lazy(() => import("./components/Loading"))
 const Tim = React.lazy(() => import("./pages/Tim"))
 const FAQ = React.lazy(() => import("./pages/FAQ"))
 const Artikel = React.lazy(() => import("./pages/Artikel"))
+const DetailBus = React.lazy(() => import("./pages/DetailBus"))
 
 function App() {
 
@@ -54,6 +56,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/listbus" element={<ListBus />} />
+          <Route path="/listbus/:id" element={<DetailBus/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/addbookings" element={<AddBookings />} />
           <Route path="/review" element={<Review />} />

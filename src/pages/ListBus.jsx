@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import dataBus from "../JSON/databus.json";
+import { Link } from 'react-router-dom';
 
 export default function ListBus() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,8 +30,8 @@ export default function ListBus() {
 
     const matchesTag = selectedTag
       ? (selectedTag === 'Wifi' && databus.fasilitas.wifi) ||
-        (selectedTag === 'AC' && databus.fasilitas.ac) ||
-        (selectedTag === 'Toilet' && databus.fasilitas.toilet)
+      (selectedTag === 'AC' && databus.fasilitas.ac) ||
+      (selectedTag === 'Toilet' && databus.fasilitas.toilet)
       : true;
 
     const matchesTime = selectedTime ? databus.jadwal.waktu_berangkat.includes(selectedTime) : true;
@@ -160,9 +161,12 @@ export default function ListBus() {
                     <button className="text-red-600 hover:text-red-800 transition-all duration-300">
                       Delete
                     </button>
-                    <button className="text-indigo-600 hover:text-indigo-800 transition-all duration-300">
+                    <Link
+                      to={`/listbus/${item.id_layanan}`}
+                      className="text-indigo-600 hover:text-indigo-800 transition-all duration-300"
+                    >
                       View Details
-                    </button>
+                    </Link>
                   </td>
                 </tr>
               ))}
