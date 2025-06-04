@@ -34,7 +34,7 @@ export default function ErrorPage({ kode = "404", deskripsi = "Error Not Found" 
           The request could not be understood or was missing required parameters.
         </p>
         {quote && (
-          <div className="text-lg text-gray-600 mt-3 max-w-sm mx-auto">
+          <div className="text-lg font-extrabold text-indigo-700 mt-3 max-w-sm mx-auto">
             "{quote}"
           </div>
         )}

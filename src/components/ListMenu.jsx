@@ -93,6 +93,12 @@ export default function ListMenu() {
                         <span className="hidden md:inline font-medium">Company Profile</span>
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink id="menu-13" to="/layanan" className={menuClass}>
+                        <RiProfileFill className="mr-2 text-xl"/>
+                        <span className="hidden md:inline font-medium">Layanan</span>
+                    </NavLink>
+                </li>
             </ul>
         </div>
     )

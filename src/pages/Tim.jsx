@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import dataAwal from "../JSON/tim.json";
+import dataAwal from "../JSON/Tim.json";
+import { Link } from "react-router-dom";
 
 export default function Tim() {
   const [tim, setTim] = useState([]);
@@ -122,6 +123,9 @@ export default function Tim() {
               >
                 🗑️ Hapus
               </button>
+              <Link to={`/tim/${item.id}`} className="text-indigo-600 hover:text-indigo-800">
+                Profile
+              </Link>
             </div>
           </div>
         ))}

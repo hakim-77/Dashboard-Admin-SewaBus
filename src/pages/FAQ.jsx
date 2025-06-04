@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaCheckCircle, FaClock } from "react-icons/fa";
 import faqData from "../JSON/faq.json"; // Ganti path sesuai
+import { Link } from "react-router-dom";
 
 export default function FAQ() {
     const [filters, setFilters] = useState({
@@ -90,6 +91,14 @@ export default function FAQ() {
                         <p className="mt-2 text-sm text-gray-400">
                             Ditambahkan pada: {new Date(faq.tanggal).toLocaleDateString()}
                         </p>
+                         <div className="mt-4">
+                            <Link
+                                to={`/faq/${faq.id}`}
+                                className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                            >
+                                Lihat Detail
+                            </Link>
+                        </div>
                     </div>
                 ))}
             </div>

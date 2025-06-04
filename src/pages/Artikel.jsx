@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import artikelData from "../JSON/artikel.json"; // Ganti path sesuai struktur proyekmu
 
 export default function Artikel() {
@@ -80,7 +81,9 @@ export default function Artikel() {
             {filteredArticles.map((item) => (
               <tr key={item.id} className="hover:bg-gray-50">
                 <td className="p-2 border">{item.id}</td>
-                <td className="p-2 border">{item.judul}</td>
+                <td className="p-2 border text-blue-600 underline hover:text-blue-800">
+                  <Link to={`/artikel/${item.id}`}>{item.judul}</Link>
+                </td>
                 <td className="p-2 border">
                   {item.konten.length > 100
                     ? item.konten.substring(0, 100) + "..."
