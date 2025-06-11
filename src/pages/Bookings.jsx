@@ -91,6 +91,7 @@ export default function Booking() {
               <th className="p-3 border text-sm font-semibold">Status</th>
               <th className="p-3 border text-sm font-semibold">Total Price</th>
               <th className="p-3 border text-sm font-semibold">Booking Date</th>
+              <th className="p-3 border text-sm font-semibold">Destination</th>
             </tr>
           </thead>
           <tbody>
@@ -106,6 +107,7 @@ export default function Booking() {
                 </td>
                 <td className="p-3 border">{`Rp. ${booking.totalPrice.toLocaleString()}`}</td>
                 <td className="p-3 border">{new Date(booking.date).toLocaleDateString()}</td>
+                <td className="p-3 border">{booking.destination}</td>
               </tr>
             ))}
           </tbody>

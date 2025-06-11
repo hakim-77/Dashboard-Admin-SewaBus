@@ -1,5 +1,6 @@
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { FaBell, FaSearch, FaChevronDown } from "react-icons/fa";
+import { FiBell } from "react-icons/fi";
 
 export default function Header() {
     return (
@@ -21,10 +22,10 @@ export default function Header() {
 
                 {/* Notification */}
                 <div className="relative cursor-pointer hover:scale-105 transition-transform duration-200">
-                    <FaBell className="text-gray-600 text-xl" />
-                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold px-1.5 py-0.5 rounded-full shadow-sm">
-                        !
-                    </span>
+                    <button className="relative">
+                        <FiBell className="text-slate-600 h-6 w-6" />
+                        <span className="absolute -top-1 -right-0 h-2 w-2 bg-red-500 text-white text-xs rounded-full flex items-center justify-center"></span>
+                    </button>
                 </div>
 
                 {/* Profile */}
