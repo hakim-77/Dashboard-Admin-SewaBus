@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import dataAwal from "../JSON/tim.json";
+import dataAwal from "../JSON/Tim.json";
 import { Link } from "react-router-dom";
 
 export default function Tim() {
@@ -13,18 +13,7 @@ export default function Tim() {
   }, []);
 
   const handleChange = (e) => {
-    if (e.target.name === 'foto') {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          setForm({ ...form, foto: event.target.result });
-        };
-        reader.readAsDataURL(file);
-      }
-    } else {
-      setForm({ ...form, [e.target.name]: e.target.value });
-    }
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -38,7 +27,7 @@ export default function Tim() {
     }
     setForm({ id: null, nama: "", jabatan: "", foto: "" });
   };
-  
+
   const handleEdit = (item) => {
     setForm(item);
     setEditMode(true);
