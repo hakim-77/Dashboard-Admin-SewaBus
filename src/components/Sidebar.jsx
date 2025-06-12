@@ -7,8 +7,8 @@ import { Link, NavLink } from "react-router-dom"
 export default function Sidebar() {
     const menuClass = ({ isActive }) =>
         `flex cursor-pointer items-center rounded-xl p-4 space-x-2
-        ${isActive ? 
-            "text-white bg-blue-500 font-extrabold" : 
+        ${isActive ?
+            "text-white bg-blue-500 font-extrabold" :
             "text-gray-600 hover:text-white hover:bg-blue-500 hover:border-b-4 hover:border-blue-500 hover:font-extrabold"
         }`
     return (
@@ -41,10 +41,18 @@ export default function Sidebar() {
             </div>
 
             {/* Logout */}
-            <NavLink id="menu-9" to="/login" className={menuClass}>
+<a
+                id="menu-9"
+                href="https://uas-project-peach.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex cursor-pointer items-center rounded-xl p-4 space-x-2 text-gray-600 hover:text-white hover:bg-blue-500 hover:border-b-4 hover:border-blue-500 hover:font-extrabold"
+            >
                 <FiLogOut className="mr-4 text-xl" />
                 <span className="hidden md:inline font-medium">Logout</span>
-            </NavLink>
+            </a>
+
+
         </div>
     );
 }

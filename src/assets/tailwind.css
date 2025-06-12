@@ -2,7 +2,7 @@
 
 /** Tambahkan Ini **/
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark, caramellatte; 
+    themes: light --default, dark --prefersdark, winter; 
 }
 
 @font-face {

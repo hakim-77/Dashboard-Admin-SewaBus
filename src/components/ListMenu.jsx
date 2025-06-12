@@ -50,9 +50,9 @@ export default function ListMenu() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink id="menu-5" to="/review" className={menuClass}>
+                    <NavLink id="menu-5" to="/testimoni" className={menuClass}>
                         <MdOutlineReviews className="mr-4 text-xl" />
-                        <span className="hidden md:inline font-medium">Review</span>
+                        <span className="hidden md:inline font-medium">Testimoni</span>
                     </NavLink>
                 </li>
                 <li>
@@ -74,7 +74,7 @@ export default function ListMenu() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink id="menu-9" to="/tim" className={menuClass}>
+                    <NavLink id="menu-9" to="/team" className={menuClass}>
                         <RiTeamFill className="mr-2 text-xl" />
                         <span className="hidden md:inline font-medium">Tim Karyawan</span>
                     </NavLink>

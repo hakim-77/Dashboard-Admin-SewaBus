@@ -13,15 +13,15 @@ export default function Lowongan() {
     const [success, setSuccess] = useState("");
     const [editId, setEditId] = useState(null);
     const [lowongans, setLowongans] = useState([]);
+    const [selectedItem, setSelectedItem] = useState(null);
+
 
     const [dataForm, setDataForm] = useState({
-        posisi: "",
-        deskripsi: "",
-        kualifikasi: "",
-        gaji: "",
-        tgl_buka: "",
-        tgl_tutup: "",
-        status: false,
+        title: "",
+        location: "",
+        type: "",
+        description: "",
+        image: "", // Jika Anda berencana menyimpan URL gambar
     });
 
     useEffect(() => {
@@ -97,13 +97,11 @@ export default function Lowongan() {
 
     const handleEdit = (item) => {
         setDataForm({
-            posisi: item.posisi,
-            deskripsi: item.deskripsi,
-            kualifikasi: item.kualifikasi,
-            gaji: item.gaji,
-            tgl_buka: item.tgl_buka,
-            tgl_tutup: item.tgl_tutup,
-            status: item.status,
+            title: item.title,
+            location: item.location,
+            type: item.type,
+            description: item.description,
+            image: item.image,
         });
         setEditId(item.id);
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -116,13 +114,11 @@ export default function Lowongan() {
 
     const resetForm = () => {
         setDataForm({
-            posisi: "",
-            deskripsi: "",
-            kualifikasi: "",
-            gaji: "",
-            tgl_buka: "",
-            tgl_tutup: "",
-            status: false,
+            title: "",
+            location: "",
+            type: "",
+            description: "",
+            image: "",
         });
     };
 
@@ -146,12 +142,12 @@ export default function Lowongan() {
                 <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-6">
                     <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-1">
-                            Posisi
+                            Judul Lowongan
                         </label>
                         <input
                             type="text"
-                            name="posisi"
-                            value={dataForm.posisi}
+                            name="title" // Ganti dari "posisi"
+                            value={dataForm.title} // Ganti dari "posisi"
                             onChange={handleChange}
                             required
                             disabled={loading}
@@ -162,27 +158,43 @@ export default function Lowongan() {
 
                     <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-1">
-                            Gaji
+                            Lokasi
                         </label>
                         <input
                             type="text"
-                            name="gaji"
-                            value={dataForm.gaji}
+                            name="location"
+                            value={dataForm.location}
                             onChange={handleChange}
                             required
                             disabled={loading}
-                            placeholder="Contoh: Rp5.000.000"
+                            placeholder="Contoh: Jakarta / Remote"
+                            className="w-full p-3 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1">
+                            Tipe Pekerjaan
+                        </label>
+                        <input
+                            type="text"
+                            name="type"
+                            value={dataForm.type}
+                            onChange={handleChange}
+                            required
+                            disabled={loading}
+                            placeholder="Contoh: Full-time / Internship"
                             className="w-full p-3 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"
                         />
                     </div>
 
                     <div className="md:col-span-2">
                         <label className="block text-sm font-semibold text-gray-700 mb-1">
-                            Deskripsi
+                            Deskripsi Pekerjaan
                         </label>
                         <textarea
-                            name="deskripsi"
-                            value={dataForm.deskripsi}
+                            name="description" // Ganti dari "deskripsi"
+                            value={dataForm.description} // Ganti dari "deskripsi"
                             onChange={handleChange}
                             required
                             rows="3"
@@ -194,64 +206,20 @@ export default function Lowongan() {
 
                     <div className="md:col-span-2">
                         <label className="block text-sm font-semibold text-gray-700 mb-1">
-                            Kualifikasi
-                        </label>
-                        <textarea
-                            name="kualifikasi"
-                            value={dataForm.kualifikasi}
-                            onChange={handleChange}
-                            required
-                            rows="3"
-                            disabled={loading}
-                            placeholder="Tuliskan kualifikasi yang dibutuhkan..."
-                            className="w-full p-3 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 resize-none transition"
-                        />
-                    </div>
-
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-1">
-                            Tanggal Buka
+                            URL Gambar
                         </label>
                         <input
-                            type="date"
-                            name="tgl_buka"
-                            value={dataForm.tgl_buka}
+                            type="url" // Menggunakan type="url" untuk URL gambar
+                            name="image"
+                            value={dataForm.image}
                             onChange={handleChange}
-                            required
-                            disabled={loading}
+                            placeholder="Contoh: https://example.com/logo.png"
                             className="w-full p-3 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"
                         />
+                        <p className="text-xs text-gray-500 mt-1">Opsional, masukkan URL gambar terkait lowongan.</p>
                     </div>
 
-                    <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-1">
-                            Tanggal Tutup
-                        </label>
-                        <input
-                            type="date"
-                            name="tgl_tutup"
-                            value={dataForm.tgl_tutup}
-                            onChange={handleChange}
-                            required
-                            disabled={loading}
-                            className="w-full p-3 bg-gray-50 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 transition"
-                        />
-                    </div>
 
-                    <div className="flex items-center gap-3">
-                        <span className="text-sm font-medium text-gray-700">Status Aktif</span>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                name="status"
-                                checked={dataForm.status}
-                                onChange={handleChange}
-                                disabled={loading}
-                                className="sr-only peer"
-                            />
-                            <div className="w-11 h-6 bg-gray-200 peer-checked:bg-blue-600 rounded-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:h-5 after:w-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full" />
-                        </label>
-                    </div>
 
                     <div className="md:col-span-2">
                         <button
@@ -301,31 +269,36 @@ export default function Lowongan() {
                             <GenericTable
                                 columns={[
                                     "#",
-                                    "Posisi",
-                                    "Gaji",
-                                    "Tanggal Buka",
-                                    "Tanggal Tutup",
-                                    "Status",
-                                    "Aksi",
+                                    "Judul",
+                                    "Lokasi",
+                                    "Tipe",
+                                    "Deskripsi",
+                                    "Gambar",  // Tambahkan kolom ini
+                                    "Aksi"
                                 ]}
                                 data={lowongans}
                                 renderRow={(item, index) => (
                                     <>
                                         <td className="px-6 py-4 text-gray-700">{index + 1}</td>
-                                        <td className="px-6 py-4 text-blue-600 font-semibold">{item.posisi}</td>
-                                        <td className="px-6 py-4">{item.gaji}</td>
-                                        <td className="px-6 py-4">{item.tgl_buka}</td>
-                                        <td className="px-6 py-4">{item.tgl_tutup}</td>
+                                        <td className="px-6 py-4 text-blue-600 font-semibold">{item.title}</td> {/* Ganti dari item.posisi */}
+                                        <td className="px-6 py-4">{item.location}</td> {/* BARU */}
+                                        <td className="px-6 py-4">{item.type}</td>     {/* BARU */}
+                                        {/* Anda bisa memilih untuk menampilkan deskripsi singkat atau tidak */}
+                                        <td className="px-6 py-4 truncate max-w-[200px]">{item.description}</td>
                                         <td className="px-6 py-4">
-                                            <span
-                                                className={`inline-flex items-center gap-2 px-3 py-1 text-sm rounded-full font-medium ${item.status
-                                                    ? "bg-green-100 text-green-700"
-                                                    : "bg-red-100 text-red-700"
-                                                    }`}
-                                            >
-                                                {item.status ? "✅ Aktif" : "❌ Nonaktif"}
-                                            </span>
+                                            {item.image ? (
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="h-10 w-10 object-cover rounded"
+                                                />
+                                            ) : (
+                                                <span className="text-gray-400">-</span>
+                                            )}
                                         </td>
+                                        {/* Hapus td untuk Gaji, Tanggal Buka, Tanggal Tutup, Status */}
+                                        {/* ... */}
+
                                         <td className="px-6 py-4 text-center">
                                             <div className="flex justify-center gap-4">
                                                 <button
@@ -343,15 +316,54 @@ export default function Lowongan() {
                                                 >
                                                     <AiFillDelete className="text-red-500 text-xl hover:text-red-700" />
                                                 </button>
+                                                <button
+                                                    className="btn"
+                                                    onClick={() => {
+                                                        setSelectedItem(item);
+                                                        document.getElementById("modal-detail").showModal();
+                                                    }}
+                                                >
+                                                    Detail
+                                                </button>
                                             </div>
                                         </td>
                                     </>
                                 )}
                             />
+
                         </div>
                     )}
                 </div>
             </div>
+            <dialog id="modal-detail" className="modal">
+                <div className="modal-box max-w-xl">
+                    <h3 className="font-bold text-2xl mb-4 text-blue-800">
+                        Detail Lowongan
+                    </h3>
+                    {selectedItem ? (
+                        <div className="space-y-3 text-gray-700">
+                            <p><strong>Judul:</strong> {selectedItem.title}</p>
+                            <p><strong>Lokasi:</strong> {selectedItem.location}</p>
+                            <p><strong>Tipe:</strong> {selectedItem.type}</p>
+                            <p><strong>Deskripsi:</strong> {selectedItem.description}</p>
+                            {selectedItem.image && (
+                                <img
+                                    src={selectedItem.image}
+                                    alt={selectedItem.title}
+                                    className="w-full max-h-60 object-contain border rounded-xl"
+                                />
+                            )}
+                        </div>
+                    ) : (
+                        <p className="text-gray-500">Tidak ada data untuk ditampilkan.</p>
+                    )}
+                    <div className="modal-action">
+                        <form method="dialog">
+                            <button className="btn">Tutup</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
         </div>
     );
 }
