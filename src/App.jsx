@@ -36,7 +36,7 @@ const Booking = React.lazy(() => import("./pages/Bookings"))
 const ListBus = React.lazy(() => import("./pages/ListBus"))
 const AddBookings = React.lazy(() => import("./pages/AddBookings"))
 const Contact = React.lazy(() => import("./pages/Contact"))
-const Review = React.lazy(() => import("./pages/Review"))
+const Testimoni = React.lazy(() => import("./pages/Testimoni"))
 const NotFound = React.lazy(() => import("./pages/NotFound"))
 const ErrorPage = React.lazy(() => import("./pages/ErrorPage"))
 const MainLayout = React.lazy(() => import("./layout/MainLayout"))
@@ -45,7 +45,7 @@ const Login = React.lazy(() => import("./pages/auth/Login"))
 const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
 const Register = React.lazy(() => import("./pages/auth/Register"))
 const Loading = React.lazy(() => import("./components/Loading"))
-const Tim = React.lazy(() => import("./pages/Tim"))
+const Tim = React.lazy(() => import("./pages/Team"))
 const FAQ = React.lazy(() => import("./pages/FAQ"))
 const Artikel = React.lazy(() => import("./pages/Artikel"))
 const DetailBus = React.lazy(() => import("./pages/DetailBus"))
@@ -73,9 +73,9 @@ function App() {
           <Route path="/listbus/:id" element={<DetailBus/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/addbookings" element={<AddBookings />} />
-          <Route path="/review" element={<Review />} />
-          <Route path="/tim" element={<Tim />} />
-          <Route path="/tim/:id" element={<DetailTim/>} />
+          <Route path="/testimoni" element={<Testimoni/>} />
+          <Route path="/team" element={<Tim />} />
+          <Route path="/team/:id" element={<DetailTim/>} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/faq/:id" element={<DetailFAQ/>} />
           <Route path="/artikel" element={<Artikel />} />
